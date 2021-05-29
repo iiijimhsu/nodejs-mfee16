@@ -77,6 +77,10 @@ bar
 nodejs影片
 
 解釋一下自己對講者所分享的內容的理解？
+
 javascripe 為單執行續的程式語言,runtime 一次只能做一件事,但瀏覽器在背後還會有執行續再操作,只是我們看不到,所以在執行續操作settimeout(時,會在stack上執行後,之後webapis執行計時器,之後進入task queue 後,event loop 再確認stack 沒有東西執行後,再讓task queue 回到STACK 執行,
+
+
 試著用自己的話來解釋什麼是 event loop?
+
 event loop(事件循環) 像是協調者 功用為確認STACK 是否還有執行的東西 沒有的話就會將task queue裡面的執行傳到stack去執行
