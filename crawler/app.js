@@ -7,7 +7,7 @@
 
 const axios = require('axios');
 
-axios.get('https://www.twse.com.tw/exchangeReport/STOCK_DAY?')
+axios.get('https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20210523&stockNo=3661')
   .then(function (response) {
     // handle success
     console.log(response);
