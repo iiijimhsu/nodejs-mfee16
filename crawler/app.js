@@ -5,7 +5,7 @@
 
 //引入axios
 
-const axios = require(axios);
+const axios = require('axios');
 
 axios.get('https://www.twse.com.tw/exchangeReport/STOCK_DAY?')
   .then(function (response) {
