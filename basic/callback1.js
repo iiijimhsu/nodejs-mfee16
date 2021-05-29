@@ -13,7 +13,7 @@ let doWork = function (job, timer, cb) {
       return;
     }
     console.log(result);
-  });
+  
   
   doWork("吃早餐", 4000, function (err, result) {
     if (err) {
@@ -21,7 +21,7 @@ let doWork = function (job, timer, cb) {
       return;
     }
     console.log(result);
-  });
+  
   doWork("寫功課", 6000, function (err, result) {
     if (err) {
       console.error(err);
@@ -29,3 +29,5 @@ let doWork = function (job, timer, cb) {
     }
     console.log(result);
   });
+});
+});
