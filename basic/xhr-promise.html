@@ -31,6 +31,7 @@
         if (this.status === 200) {
           resolve(this.responseText);
         } else {
+          //reject(`非同步請求 有問題 ${this.statujs}`);
           reject(this.status);
         }
       };
@@ -45,7 +46,7 @@
         })
         
         .catch((reject) => {
-            message.innerText = `非同步請求: ${error}`;
+            message.innerText = `非同步請求 有問題 ${error}`;
         });
       // 
     });
