@@ -31,7 +31,7 @@ let connection = mysql.createConnection({
   let stock = await connection.queryAsync( `SELECT stock_id FROM stock WHERE stock_id = ${stockCode}`)
   if (stock.lenth <= 0){
     let response = await axios.get(
-        `SELECT stock_id FROM stock WHERE stock_id = ${stockCode}`
+        `https://www.twse.com.tw/zh/api/codeQuery?query= ${stockCode}`
     );
     let result = response.data.suggestions.shift();
     let result2 = result.split("\t");
