@@ -20,4 +20,4 @@ axios.get('https://www.twse.com.tw/exchangeReport/STOCK_DAY?', {
   })
   .then(function () {
     // always executed
-  });  
+  });   
