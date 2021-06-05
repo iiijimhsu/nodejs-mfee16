@@ -39,4 +39,4 @@ function readFilePromise() {
     // 通知管理員來處理
     // 過幾分鐘後重試
   }
-})();
+})(); 
