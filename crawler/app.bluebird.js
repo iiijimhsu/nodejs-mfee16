@@ -47,4 +47,4 @@ readFileBlue("stock.txt", "utf-8")
   })
   .catch((err) => {
     console.error(err);
-  });
+  }); 
