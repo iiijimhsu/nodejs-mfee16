@@ -83,4 +83,4 @@ javascripe 為單執行續的程式語言,runtime 一次只能做一件事,但�
 
 試著用自己的話來解釋什麼是 event loop?
 
-event loop(事件循環) 像是協調者 功用為確認STACK 是否還有執行的東西 沒有的話就會將task queue裡面的執行傳到stack去執行
+event loop(事件循環) 像是協調者 功用為確認STACK 是否還有執行的東西 沒有的話就會將task queue裡面的執行傳到stack去執行 
