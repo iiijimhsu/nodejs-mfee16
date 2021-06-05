@@ -41,4 +41,4 @@ readFilePromise()
   })
   .catch((err) => {
     console.error(err);
-  });
+  }); 
