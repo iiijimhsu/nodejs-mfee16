@@ -7,62 +7,19 @@
 //npm i axios
 //引入 axios
 const axios = require("axios");
-const moment = require("moment");
-const fs = require("fs/promises");
-const mysql = require("mysql")
-const Promise = require('bluebird')
-
-//建立連線所需資料
-let connection = mysql.createConnection({
-    host     : "localhost",
-    user     : "root",
-    password : "",
-    database : "stock",
-  });
-
-  connection = Promise.promisifyAll(connection);
-
-  (async function(){
-  try{
-      await connection.connectAsync();
-
-  let stockCode = await fs.readFile("stock.txt", "utf8")
-  console.log(`stock code: ${stockCode}`);
-  let stock = await connection.queryAsync( `SELECT stock_id FROM stock WHERE stock_id = ${stockCode}`)
-  if (stock.lenth <= 0){
-    let response = await axios.get(
-        `https://www.twse.com.tw/zh/api/codeQuery?query= ${stockCode}`
-    );
-    let result = response.data.suggestions.shift();
-    let result2 = result.split("\t");
-    if (result2.lenth > 1){
-        connection.queryAsync(`INSERT INTO stock(stock_id, stock_name) 
-        VALUE ('${result2[0]}','${result2[1]}');`
-        
-        );
-    }
-   }
-}catch(err){// https://www.twse.com.tw/exchangeReport/STOCK_DAY
-// ?response=json
-// &date=20210523
-// &stockNo=2610
-
-
-//npm i axios
-//引入 axios
-const axios = require("axios");
 const fs = require("fs/promises");
 const moment = require("moment");
 const mysql = require("mysql");
 const Promise = require("bluebird");
-
+require("dotenv").config();
 //建立連線所需資料
 let connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "stock",
-});
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+  });
 //建立連線
 connection = Promise.promisifyAll(connection);
 
@@ -89,11 +46,6 @@ connection = Promise.promisifyAll(connection);
     }
    }
 }catch(err){
- console.log(err);      
-} finally{
-    connection.end();
-}
-})();
  console.log(err);      
 } finally{
     connection.end();
