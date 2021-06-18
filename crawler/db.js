@@ -1,5 +1,6 @@
+const mysql = require("mysql");
+const Promise = require("bluebird");
 require("dotenv").config();
-
 //設定資料庫連線
 let connection = mysql.createConnection({
   host: process.env.DB_HOST,
