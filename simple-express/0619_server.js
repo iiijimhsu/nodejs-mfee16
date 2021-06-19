@@ -89,15 +89,3 @@ app.listen(3000, async () => {
   await connection.connectAsync();
   console.log(`我跑起來了喔 在 port 3000`);
 });
-// app.get("/about", function (req, res) {
-//   console.log("我是 ABOUT - BBBBB");
-//   res.send("<h1>About Express BBBB</h1>");
-// });
-
-app.get("/test", function (req, res) {
-  res.send("Test Express");
-});
-
-app.listen(3000, () => {
-  console.log(`我跑起來了喔 在 port 3000`);
-});
