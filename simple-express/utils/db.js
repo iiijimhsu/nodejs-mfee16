@@ -9,8 +9,9 @@ let connection = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   port: process.env.DB_PORT,
+  dateStrings: true,
 });
 //connection->Promise化
 connection = Promise.promisifyAll(connection);
 
-exports.connection = connection;
+module.exports = connection;
