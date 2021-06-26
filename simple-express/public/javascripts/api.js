@@ -27,4 +27,4 @@ $(function () {
       .then((data) => {
         console.log(data);
       });
-  });
+  }); 
